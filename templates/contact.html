@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block head_title
+%}Kontak kami{% endblock %} {% block content %}
+
+<div class="site-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-7">
+        <h2 class="h3 mb-3 text-black">Tuliskan pesan Anda</h2>
+      </div>
+      <div class="col-md-7">
+        <form method="POST">
+          {% csrf_token %} {{ form|crispy }}
+          <input
+            type="submit"
+            class="btn btn-primary btn-lg btn-block"
+            value="Submit message"
+          />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
